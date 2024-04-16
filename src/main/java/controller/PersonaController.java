@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/personas")
+@RequestMapping("/seminari")
 public class PersonaController {
     private final PersonaService personaService;
 
@@ -26,4 +26,12 @@ public class PersonaController {
     @GetMapping
     public ResponseEntity<List<PersonaResponseDTO>> obtenerTodasLasPersonas() {
         List<PersonaResponseDTO> personas = personaService.obtenerTodasLasPersonas();
-        return new ResponseEntity<>(personas, HttpStatus.OK);}}
+        return new ResponseEntity<>(personas, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> borrarPersona(@PathVariable Long id) {
+        personaService.borrarPersona(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+}

@@ -6,7 +6,6 @@ import mapper.PersonaMapper;
 import model.Persona;
 import repository.PersonaRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,5 +30,9 @@ public class PersonaService {
         return personas.stream()
                 .map(personaMapper::convertToResponseDTO)
                 .collect(Collectors.toList());
+    }
+
+    public void borrarPersona(Long id) {
+        personaRepository.deleteById(id);
     }
 }
