@@ -11,14 +11,17 @@ public class PersonaMapper {
     private final ModelMapper modelMapper;
 
     public PersonaMapper(ModelMapper modelMapper) {
+
         this.modelMapper = modelMapper;
     }
 
     public PersonaResponseDTO convertToResponseDTO(Persona persona) {
+
         return modelMapper.map(persona, PersonaResponseDTO.class);
     }
 
     public Persona convertToEntity(PersonaRequestDTO personaRequestDTO) {
+
         return modelMapper.map(personaRequestDTO, Persona.class);
     }
 }
