@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/seminari")
+@RequestMapping("/api_seminario/personas")
 public class PersonaController {
     private final PersonaService personaService;
 

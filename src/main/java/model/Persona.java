@@ -1,9 +1,14 @@
 package model;
 
 import javax.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+
 
 @Entity
+@Builder
 @Table(name = "personas")
+@Getter
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
